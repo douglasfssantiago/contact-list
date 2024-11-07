@@ -1,7 +1,7 @@
 'use strict';
 
 const inputText = select('.input-text');
-const bottonAdd = select('.botton-add');
+const addButton = select('.button-add');
 const contactDisplay = select('.contact-display');
 const alert = select('.alert');
 const counterDisplay = select('.counter-display');
@@ -44,8 +44,6 @@ class Contact {
     }
 }
 
-const contact = new Contact();
-
 function select(selector, scope = document) {
     return scope.querySelector(selector);
 }
@@ -55,33 +53,37 @@ function listen(event, selector, callback) {
 }
 
 function listContacts() {
-  const inputValues = inputText.value.split(',');
 
-  const newContact = new Contact(...inputValues);
-  contacts.unshift(newContact);
-
-  const contactBox = document.createElement('div');
-  contactBox.className = 'box';
-
-  const contactName = document.createElement('p');
-  contactName.textContent = `Name: ${newContact.name}`;
-  contactBox.appendChild(contactName);
-
-  const contactCity = document.createElement('p');
-  contactCity.textContent = `City: ${newContact.city}`;
-  contactBox.appendChild(contactCity);
-
-  const contactEmail = document.createElement('p');
-  contactEmail.textContent = `Email: ${newContact.email}`;
+  const inputValues = inputText.value.split(',').map(value => value.trim());
+  
+  const [name, city, email] = inputValues.map(value => value.trim()); 
+  const newContact = new Contact(name, city, email); 
+  contacts.unshift(newContact); 
+  
+  const contactBox = document.createElement('div'); 
+  contactBox.className = 'box'; 
+  
+  const contactName = document.createElement('p'); 
+  contactName.textContent = `Name: ${newContact.name}`; 
+  contactBox.appendChild(contactName); 
+  
+  const contactCity = document.createElement('p'); 
+  contactCity.textContent = `City: ${newContact.city}`; 
+  contactBox.appendChild(contactCity); 
+  
+  const contactEmail = document.createElement('p'); 
+  contactEmail.textContent = `Email: ${newContact.email}`; 
   contactBox.appendChild(contactEmail);
 
   addContactListener(contactBox);
+  addContact(contactBox);
+}
 
-  contactDisplay.insertBefore(contactBox, contactDisplay.firstChild);
-  counter++;
-  updateCounter(); 
+function addContact(contactBox) { 
+  contactDisplay.insertBefore(contactBox, contactDisplay.firstChild); 
+  counter++; updateCounter(); 
   inputText.value = ''; 
-  alert.textContent = '';
+  alert.textContent = ''; 
 }
 
 function addContactListener(contactBox) { 
@@ -94,27 +96,29 @@ function validateContact() {
     const inputValue = inputText.value.trim();
   
     if (!inputValue) {
-      alert.textContent = 'Please enter the required information.';
+      alert.textContent = 'Please enter the required information!';
+      inputText.focus();
       return false;
     }
   
     if (!inputValue.includes(',')) {
-      alert.textContent = 'Separate the information with commas.';
+      alert.textContent = 'Separate the information with commas!';
+      
       return false;
     }
-  
-    const newContact = new Contact(...inputValue.split(','));
-  
-    if (!newContact.email.includes('@')) {
-      alert.textContent = 'Include a valid email.';
-      return false;
+
+    const [name, city, email] = inputValue.split(',').map(value => value.trim()); 
+    if (!email.includes('@')) { 
+      alert.textContent = 'Include a valid email!'; 
+      inputText.focus(); 
+      return false; 
     }
-  
+
     alert.textContent = '';
     return true;
 }
 
-listen('click', bottonAdd, function () {
+listen('click', addButton, function () {
     if (validateContact()) {
       listContacts();
     } else {
