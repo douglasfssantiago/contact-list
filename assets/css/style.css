@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+:root {
+    --app-dark-background: #141414;
+    --app-medium-grey: #2d2d2d;
+    --app-light-grey: #676767;
+    --app-white: #fff;
+    --app-green: #008900;
+    --app-pink: #ff1493;
+    --app-red: #c40000;    
+}
+   
+body {
+    font-family: 'Nunito Sans', 'Open Sans', Arial, sans-serif ;
+    background-color: var(--app-dark-background);
+    text-rendering: geometricPrecision;
+    overflow: auto;
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main {
+    overflow: auto;
+}
+
+h1 {
+    font-size: 35px;
+    color: var(--app-white);
+    text-align: center;
+    margin: 30px;
+}
+
+.settings-input {
+    display: flex;
+    align-items: center;
+
+    .input-text {
+        background-color: var(--app-medium-grey);
+        color: var(--app-white);    
+        font-size: 20px;
+        height: 45px;
+        width: 500px;
+        border: 1px solid var(--app-light-grey) ;
+        border-radius: 5px;
+        padding: 6px 0  6px  15px;
+        margin: 5px 5px;
+    }
+
+    .input-text:hover {
+        border: 1px solid var(--app-white);
+        transition: all 0.25s ease-in-out; 
+    }
+
+    .botton-add{
+        font-size: 20px;
+        height: 45px;
+        width: 90px;
+        background-color: var(--app-green);
+        color: var(--app-white);
+        border: 1px solid var(--app-light-grey) ;
+        border-radius: 5px;
+        cursor: pointer; 
+        margin: 5px 5px;   
+    }
+
+    .botton-add:hover {
+        border: 1px solid var(--app-white);
+        transition: all 0.25s ease-in-out; 
+    }    
+}
+
+.alert {
+    height: 15px;
+    font-size: 12px;
+    color: var(--app-red);
+    font-variant:tabular-nums;
+}
+
+.contact-display{
+    background-color: transparent;
+    width: 940px;
+    margin-top: 30px;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.box {
+    width:300px;
+    background-color: var(--app-medium-grey);
+    color: var(--app-white);
+    padding: 10px;
+    border: 1px solid var(--app-light-grey) ;
+    border-radius: 5px;
+    text-align: left; 
+}
+
+.box:hover {
+    border: 1px solid var(--app-white);
+    transition: all 0.25s ease-in-out; 
+} 
+
+.counter-display {
+    position: fixed;
+    inset: auto 20px 20px auto;
+    width: 200px;
+    height: 40px;
+    background-color: var(--app-pink);
+    border-radius: 25px;
+
+    p { 
+        font-size: 20px;
+        color: var(--app-white);
+        line-height: 25px;
+        text-align: center;
+        padding: 7px 0 0 0;
+    }
+}
+

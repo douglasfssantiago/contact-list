@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="autor" content="Douglas Santiago">
+        <meta name="descripition" content="Object Oriented JavaScript">
+        <meta name="key words" content="html, css, web, seo, web development">
+        <title>My Contacts</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="icon" href="./assets/img/favicon.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css">
+        <link rel="stylesheet" href="./assets/css/style.css" media="all">
+        <script src="./assets/js/app.js" defer></script>
+    </head>
+    <body>
+        <main>
+           <div class="container flex flex-direction-column">
+                <div class="heading">
+                    <h1>My contacts</h1>
+                </div>
+                <div class="settings-input">
+                    <form class="form-input">
+                        <input type="text" placeholder="Contact info (name, city, email)" class="input-text">
+                        <input type="button" value="Add" class="botton-add">
+                    </form>
+                </div>
+                <div class="alert-output">
+                    <p class="alert"></p>
+                </div>
+                <div class="contact-display flex flex-wrap">
+                </div>   
+                <div class="counter-display">
+                    <p>Saved contacts: 0</p>
+                </div>
+           </div>
+        </main>        
+    </body>
+</html>
