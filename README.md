@@ -5,7 +5,7 @@ tool for storing and managing contact information. Built using HTML, CSS, and
 JavaScript, the application allows users to easily add, view, and delete 
 contacts.
 
-Visit the website [here](!!!!!!!!!!!!adicionar site aqui) 
+Visit the website [here](https://douglasfssantiago.github.io/contact-list/) 
 
 ![](./assets/img/readme1.png)
 
@@ -31,9 +31,6 @@ count, so you always know how many contacts you have saved.
 Validation Alerts: Built-in validation alerts prompt you to enter required 
 information correctly, ensuring the integrity and completeness of your contact 
 data.
-
-This application is designed to be user-friendly and efficient, making it easy 
-for you to manage your contacts with minimal effort.
  
 ## Get Started
 
@@ -42,8 +39,8 @@ for you to manage your contacts with minimal effort.
 Clone this repo:
 
 ```bash
-git clone !!!!!!!!!!!!!!!!colocar o clone aqui
-cd n!!!!!!!!!!!!!!!!!!!!!!nome do repositorio aqui
+git clone https://github.com/douglasfssantiago/contact-list.git
+cd contact-list
 ```
 Explore the different files.
 
@@ -53,6 +50,6 @@ Do right-click and select the `Reveal in File Explorer` menu.
 
 Double-click on file index.html.
 
-Through the top menu, you can navegate to the other web pages, such as 
-About us and Contact us:
+This application is designed to be user-friendly and efficient, making it easy 
+for you to manage your contacts with minimal effort.
 <br/>
