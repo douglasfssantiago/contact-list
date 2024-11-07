@@ -9,39 +9,39 @@ const contacts = [];
 let counter = 0;
 
 class Contact {
-    #name;
-    #city;
-    #email;
-  
-    constructor(name, city, email) {
-      this.#name = name;
-      this.#city = city;
-      this.#email = email;
-    }
-  
-    set name(name) {
-      this.#name = name;
-    }
+  #name;
+  #city;
+  #email;
 
-    set city(city) {
-      this.#city = city;
-    }
+  constructor(name, city, email) {
+    this.#name = name;
+    this.#city = city;
+    this.#email = email;
+  }
 
-    set email(email) {
-      this.#email = email;
-    }
-  
-    get name() {
-      return this.#name;
-    }
+  set name(name) {
+    this.#name = name;
+  }
 
-    get city() {
-      return this.#city;
-    }
+  set city(city) {
+    this.#city = city;
+  }
 
-    get email() {
-      return this.#email;
-    }
+  set email(email) {
+    this.#email = email;
+  }
+
+  get name() {
+    return this.#name;
+  }
+
+  get city() {
+    return this.#city;
+  }
+
+  get email() {
+    return this.#email;
+  }
 }
 
 function select(selector, scope = document) {
@@ -93,46 +93,46 @@ function addContactListener(contactBox) {
 }
 
 function validateContact() {
-    const inputValue = inputText.value.trim();
-  
-    if (!inputValue) {
-      alert.textContent = 'Please enter the required information!';
-      inputText.focus();
-      return false;
-    }
-  
-    if (!inputValue.includes(',')) {
-      alert.textContent = 'Separate the information with commas!';
-      
-      return false;
-    }
+  const inputValue = inputText.value.trim();
 
-    const [name, city, email] = inputValue.split(',').map(value => value.trim()); 
-    if (!email.includes('@')) { 
-      alert.textContent = 'Include a valid email!'; 
-      inputText.focus(); 
-      return false; 
-    }
+  if (!inputValue) {
+    alert.textContent = 'Please enter the required information!';
+    inputText.focus();
+    return false;
+  }
 
-    alert.textContent = '';
-    return true;
+  if (!inputValue.includes(',')) {
+    alert.textContent = 'Separate the information with commas!';
+    
+    return false;
+  }
+
+  const [name, city, email] = inputValue.split(',').map(value => value.trim()); 
+  if (!email.includes('@')) { 
+    alert.textContent = 'Include a valid email!'; 
+    inputText.focus(); 
+    return false; 
+  }
+
+  alert.textContent = '';
+  return true;
 }
 
 listen('click', addButton, function () {
-    if (validateContact()) {
-      listContacts();
+  if (validateContact()) {
+    listContacts();
     } else {
-        inputText.focus();
+      inputText.focus();
     }
   });
 
 function deleteContact(contactBox) { 
-    contactDisplay.removeChild(contactBox); 
-    counter--; 
-    updateCounter(); 
+  contactDisplay.removeChild(contactBox); 
+  counter--; 
+  updateCounter(); 
 } 
 
 function updateCounter() { 
-    counterDisplay.innerHTML = `<p>Contacts saved: ${counter}</p>`; 
+  counterDisplay.innerHTML = `<p>Contacts saved: ${counter}</p>`; 
 }
 
