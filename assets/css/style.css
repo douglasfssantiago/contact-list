@@ -7,7 +7,7 @@
     --app-white: #fff;
     --app-green: #008900;
     --app-pink: #ff1493;
-    --app-red: #c40000;    
+    --app-red: #ff3333;    
 }
    
 body {
@@ -68,7 +68,7 @@ h1 {
         transition: all 0.25s ease-in-out; 
     }
 
-    .botton-add{
+    .button-add{
         font-size: 20px;
         height: 45px;
         width: 90px;
@@ -80,16 +80,19 @@ h1 {
         margin: 5px 5px;   
     }
 
-    .botton-add:hover {
+    .button-add:hover {
         border: 1px solid var(--app-white);
         transition: all 0.25s ease-in-out; 
     }    
 }
 
 .alert {
-    height: 15px;
-    font-size: 12px;
-    color: var(--app-red);
+    color: var(--app-red);    
+    font-size: 25px;
+    height: 45px;
+    width: 500px;
+    margin: 10px;
+    text-align: center;
     font-variant:tabular-nums;
 }
 
